@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/05/27 19:35:27.000.585,=C:\Users\conec\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/28 20:23:19.000.239,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/28 20:49:47.000.210,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/29 17:23:08.000.401,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/03/31 16:03:19.000.854,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/04/15 19:07:55.000.765,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/04/21 16:39:02.000.230,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/05/14 20:46:31.000.263,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/05/29 15:33:09.000.714,=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/05/29 15:34:19.000.873,C:\Fontes Clientes Novos\comport arduino\MainFormU.pas=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/05/29 15:34:19.000.873,C:\Fontes Clientes Novos\comport arduino\MainFormU.dfm=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/05/29 15:34:39.000.059,C:\Fontes Clientes Novos\comport arduino\ArduinoBlinkALed.dproj=C:\Users\conec\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

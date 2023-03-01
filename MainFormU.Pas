@@ -1,0 +1,124 @@
+unit MainFormU;
+{
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(13, OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (Serial.available()){
+    int state = Serial.parseInt();
+
+    if (state==1){
+      digitalWrite(13, HIGH);
+    }
+
+    if (state==2){
+     digitalWrite(13, LOW);
+    }
+  }
+}
+
+}
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CPort, Vcl.WinXCtrls, Vcl.StdCtrls,
+  CPortCtl, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    ComPort1: TComPort;
+    btnSetup: TButton;
+    btnConnection: TButton;
+    Label1: TLabel;
+    blinkSwitch: TToggleSwitch;
+    ComLed1: TComLed;
+    ComTerminal1: TComTerminal;
+    ComDataPacket1: TComDataPacket;
+    Button1: TButton;
+    Button2: TButton;
+    procedure btnSetupClick(Sender: TObject);
+    procedure btnConnectionClick(Sender: TObject);
+    procedure blinkSwitchClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+   Procedure  UpdateComponentsState;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.blinkSwitchClick(Sender: TObject);
+begin
+  case blinkSwitch.State of
+  tssOff:
+    ComPort1.WriteStr('BLINK_OFF');
+  tssOn:
+    ComPort1.WriteStr('BLINK_ON');
+  end;
+end;
+
+procedure TForm1.btnSetupClick(Sender: TObject);
+begin
+  ComPort1.ShowSetupDialog;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  ComPort1.WriteStr('2');
+  ComLed1.Enabled:=False;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  ComPort1.WriteStr('1');
+  ComLed1.Enabled:=true;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  if ComPort1.Connected then
+    ComPort1.Close;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  //UpdateComponentsState;
+end;
+
+procedure TForm1.btnConnectionClick(Sender: TObject);
+begin
+// If the port is connected.
+  if ComPort1.Connected then
+    ComPort1.Close // Close the port.
+  else
+   ComPort1.Open; // Open the port.
+   UpdateComponentsState;
+   //ComLed1.State :=TLedState(1);
+end;
+
+procedure TForm1.UpdateComponentsState;
+begin
+  blinkSwitch.Enabled := ComPort1.Connected;
+  Label1.Enabled := ComPort1.Connected;
+  ComPort1.WriteStr('1');
+  ComLed1.Enabled:=true;
+ // btnConnection.Caption := ifthen(ComPort1.Connected, 'Close', 'Open');
+end;
+
+end.

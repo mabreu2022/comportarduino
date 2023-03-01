@@ -1,0 +1,116 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 444
+  ClientWidth = 809
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 24
+    Width = 249
+    Height = 33
+    Caption = 'Arduino Leb BLinking'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object ComLed1: TComLed
+    Left = 376
+    Top = 96
+    Width = 25
+    Height = 25
+    LedSignal = lsConn
+    Kind = lkRedLight
+  end
+  object btnSetup: TButton
+    Left = 40
+    Top = 88
+    Width = 97
+    Height = 25
+    Caption = 'Comport Setup'
+    TabOrder = 0
+    OnClick = btnSetupClick
+  end
+  object btnConnection: TButton
+    Left = 176
+    Top = 88
+    Width = 75
+    Height = 25
+    Caption = 'Open'
+    TabOrder = 1
+    OnClick = btnConnectionClick
+  end
+  object blinkSwitch: TToggleSwitch
+    Left = 328
+    Top = 37
+    Width = 72
+    Height = 20
+    TabOrder = 2
+    OnClick = blinkSwitchClick
+  end
+  object ComTerminal1: TComTerminal
+    Left = 24
+    Top = 136
+    Width = 400
+    Height = 250
+    Color = clBlack
+    Emulation = teVT100orANSI
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Fixedsys'
+    Font.Style = []
+    ScrollBars = ssBoth
+    TabOrder = 3
+  end
+  object ComRadioGroup1: TComRadioGroup
+    Left = 440
+    Top = 208
+    Width = 185
+    Height = 105
+    Caption = 'ComRadioGroup1'
+    TabOrder = 4
+  end
+  object ComComboBox1: TComComboBox
+    Left = 504
+    Top = 56
+    Width = 145
+    Height = 21
+    Text = ''
+    Style = csDropDownList
+    ItemIndex = -1
+    TabOrder = 5
+  end
+  object ComPort1: TComPort
+    BaudRate = br9600
+    Port = 'COM1'
+    Parity.Bits = prNone
+    StopBits = sbOneStopBit
+    DataBits = dbEight
+    Events = [evRxChar, evTxEmpty, evRxFlag, evRing, evBreak, evCTS, evDSR, evError, evRLSD, evRx80Full]
+    FlowControl.OutCTSFlow = False
+    FlowControl.OutDSRFlow = False
+    FlowControl.ControlDTR = dtrDisable
+    FlowControl.ControlRTS = rtsDisable
+    FlowControl.XonXoffOut = False
+    FlowControl.XonXoffIn = False
+    StoredProps = [spBasic]
+    TriggersOnRxChar = True
+    Left = 312
+    Top = 80
+  end
+end
